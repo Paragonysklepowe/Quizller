@@ -140,7 +140,7 @@ INSERT INTO `status` (`id`, `name`) VALUES
 CREATE TABLE `students` (
   `id` int(11) NOT NULL,
   `test_id` int(11) NOT NULL,
-  `rollno` int(11) NOT NULL,
+  `student_data_id` int(11) NOT NULL,
   `password` varchar(255) NOT NULL,
   `score` int(255) NOT NULL,
   `status` tinyint(1) NOT NULL
@@ -150,7 +150,7 @@ CREATE TABLE `students` (
 -- Dumping data for table `students`
 --
 
-INSERT INTO `students` (`id`, `test_id`, `rollno`, `password`, `score`, `status`) VALUES
+INSERT INTO `students` (`id`, `test_id`, `student_data_id`, `password`, `score`, `status`) VALUES
 (1, 1, 1, 'fvOIe421', 30, 1),
 (2, 1, 2, 'jVOTAgB1', 10, 1),
 (3, 1, 3, 'yKMVVcb1', 0, 0),
@@ -290,7 +290,7 @@ ALTER TABLE `status`
 ALTER TABLE `students`
   ADD PRIMARY KEY (`id`),
   ADD KEY `students_fk0` (`test_id`),
-  ADD KEY `students_fk1` (`rollno`);
+  ADD KEY `students_fk1` (`student_data_id`);
 
 --
 -- Indexes for table `student_data`
@@ -389,7 +389,7 @@ ALTER TABLE `score`
 --
 ALTER TABLE `students`
   ADD CONSTRAINT `students_fk0` FOREIGN KEY (`test_id`) REFERENCES `tests` (`id`),
-  ADD CONSTRAINT `students_fk1` FOREIGN KEY (`rollno`) REFERENCES `student_data` (`id`);
+  ADD CONSTRAINT `students_fk1` FOREIGN KEY (`student_data_id`) REFERENCES `student_data` (`id`);
 
 --
 -- Constraints for table `student_data`

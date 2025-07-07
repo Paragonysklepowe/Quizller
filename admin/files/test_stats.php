@@ -96,7 +96,7 @@
                       $result = mysqli_query($conn,$sql);
                       $i = 1;
                       while($row = mysqli_fetch_assoc($result)) {
-                        $roll_no = $row["rollno"];
+                        $roll_no = $row["student_data_id"];
                         $sql1 = "select rollno from student_data where id = '$roll_no'";
                         $result1 = mysqli_query($conn,$sql1);
                         $row1 = mysqli_fetch_assoc($result1);
