@@ -15,11 +15,11 @@
 		$pdf->AddPage();
 		$pdf->SetFont('Arial','B',12);
 
-        $sql = "SELECT id,rollno,password from students where test_id = '$test_id' order by id ASC";
+        $sql = "SELECT id,student_data_id,password from students where test_id = '$test_id' order by id ASC";
         $result = mysqli_query($conn,$sql);
         $i = 1;
         while($row = mysqli_fetch_assoc($result)) {
-            $rollno_id = $row["rollno"];
+            $rollno_id = $row["student_data_id"];
             $sql1 = "SELECT * from student_data where id = $rollno_id";
             $result1 = mysqli_query($conn,$sql1);
             $row1 = mysqli_fetch_assoc($result1);
@@ -125,11 +125,11 @@
                         <tbody>  
                         <?php
 
-                            $sql = "SELECT id,rollno,password from students where test_id = '$test_id' order by id ASC";
+                            $sql = "SELECT id,student_data_id,password from students where test_id = '$test_id' order by id ASC";
                             $result = mysqli_query($conn,$sql);
                             $i = 1;
                             while($row = mysqli_fetch_assoc($result)) {
-                                $rollno_id = $row["rollno"];
+                                $rollno_id = $row["student_data_id"];
                                 $sql1 = "SELECT * from student_data where id = $rollno_id";
                                 $result1 = mysqli_query($conn,$sql1);
                                 $row1 = mysqli_fetch_assoc($result1);

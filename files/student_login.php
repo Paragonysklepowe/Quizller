@@ -10,7 +10,7 @@
     $row1 = mysqli_fetch_assoc($result1);
     $student_id = $row1["id"];
 
-		$result = mysqli_query($conn, "Select id, test_id, rollno, score, status from students where rollno = '".$student_id."' and password = '".$student_password."' and status = 0 "); 
+                $result = mysqli_query($conn, "Select id, test_id, student_data_id, score, status from students where student_data_id = '".$student_id."' and password = '".$student_password."' and status = 0 ");
 
 		if (mysqli_num_rows($result) > 0){     
 

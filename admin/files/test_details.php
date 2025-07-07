@@ -59,7 +59,7 @@ if(!isset($_SESSION["user_id"]))
     $roll_no_id = mysqli_insert_id($conn);
     if($result) {
       $other_settings = true;
-      $sql1 = "INSERT INTO students (test_id,rollno,password,score,status) values('$test_id','$roll_no_id','$random',0,0)";
+      $sql1 = "INSERT INTO students (test_id,student_data_id,password,score,status) values('$test_id','$roll_no_id','$random',0,0)";
       $result1 = mysqli_query($conn, $sql1);
       if($result1) {
         $other_settings = true;
@@ -94,10 +94,10 @@ if(!isset($_SESSION["user_id"]))
     $sql5= "DELETE from score WHERE test_id = $test_id";
     $result5 = mysqli_query($conn,$sql5);
     
-    $sql4 = "SELECT rollno from students where test_id = $test_id";
+    $sql4 = "SELECT student_data_id from students where test_id = $test_id";
     $result4 = mysqli_query($conn,$sql4);
     while($row4 = mysqli_fetch_assoc($result4)) {
-      $rollno_id = $row4["rollno"];
+      $rollno_id = $row4["student_data_id"];
       $sql3= "DELETE from student_data WHERE id = '$rollno_id' AND class_id IS NULL";
       $result3 = mysqli_query($conn,$sql3);
     }

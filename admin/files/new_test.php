@@ -52,7 +52,7 @@ if(isset($_POST['new_test'])) {
       $rollno = $row1["id"];
       $random = generateRandomString($temp);
       $random = $random . $test_id;
-      $sql2 = "INSERT INTO students(test_id,rollno,password,score,status) VALUES ('$test_id','$rollno','$random',0,0)";
+      $sql2 = "INSERT INTO students(test_id,student_data_id,password,score,status) VALUES ('$test_id','$rollno','$random',0,0)";
       $result2 = mysqli_query($conn,$sql2);
       if($result2) {
         header("Location:dashboard.php");
