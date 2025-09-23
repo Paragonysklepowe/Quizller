@@ -166,6 +166,11 @@
 - PHP (Backend)
 - MYSQL Database
   
+
+### Running Tests
+1. Install PHP and [Composer](https://getcomposer.org/).
+2. Run `composer install` to install development dependencies.
+3. Execute the suite with `vendor/bin/phpunit`.
 ### Collaborate with us!
 Want to contribute? Great!<br/>
 
